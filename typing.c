@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "./get-next-line/get_next_line.h"
-#include "./libFT/libft.h"
+#include "./lib/libft.h"
 #include <fcntl.h>
 
 typedef long long t_time;

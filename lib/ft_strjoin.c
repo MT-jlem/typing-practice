@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjlem <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 16:12:04 by mjlem             #+#    #+#             */
-/*   Updated: 2021/12/05 21:48:24 by mjlem            ###   ########.fr       */
+/*   Created: 2021/11/14 18:58:25 by mjlem             #+#    #+#             */
+/*   Updated: 2021/11/24 08:57:25 by mjlem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "../lib/libft.h"
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		i;
+	int		l;
+	char	*k;
+	int		j;
 
-#define BUFFER_SIZE 1000
-
-char	*get_next_line(int fd);
-char	*ft_read(int fd, char *tmp);
-char	*get_rest(char *tmp);
-int		ft_strchr(char	*tmp, char c);
-char	*ft_strjoin(char *s1, char *s2);
-// int		ft_strlen(char *s);
-char	*ft_strdup(char *s1);
-
-#endif
+	if (!s1 || !s2)
+		return (NULL);
+	i = ft_strlen(s1);
+	l = ft_strlen(s2);
+	k = (char *) malloc (i + l + 1);
+	if (!k)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[i])
+		k[j++] = s1[i++];
+	l = 0;
+	while (s2[l])
+		k[j++] = s2[l++];
+	k[j] = '\0';
+	return (k);
+}

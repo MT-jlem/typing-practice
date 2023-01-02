@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjlem <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 16:12:04 by mjlem             #+#    #+#             */
-/*   Updated: 2021/12/05 21:48:24 by mjlem            ###   ########.fr       */
+/*   Created: 2021/11/13 23:06:53 by mjlem             #+#    #+#             */
+/*   Updated: 2021/11/14 00:50:31 by mjlem            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "../lib/libft.h"
+char	*ft_strdup(const char *s1)
+{
+	char	*p;
+	int		l;
+	int		i;
 
-#define BUFFER_SIZE 1000
-
-char	*get_next_line(int fd);
-char	*ft_read(int fd, char *tmp);
-char	*get_rest(char *tmp);
-int		ft_strchr(char	*tmp, char c);
-char	*ft_strjoin(char *s1, char *s2);
-// int		ft_strlen(char *s);
-char	*ft_strdup(char *s1);
-
-#endif
+	i = 0;
+	l = ft_strlen(s1) + 1;
+	p = (char *) malloc (l);
+	if (!p)
+		return (0);
+	while (s1[i])
+	{
+		p[i] = s1[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
+}

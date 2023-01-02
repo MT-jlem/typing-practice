@@ -12,16 +12,16 @@ OBJ = $(SRC:%.c=%.o)
 all : $(NAME)
 	
 $(NAME) : $(OBJ)
-	@make -C ./libFT
-	@$(CC) $(CFLAGS) $(OBJ) libFT/libft.a -o $(NAME)
+	@make -C ./lib
+	@$(CC) $(CFLAGS) $(OBJ) lib/libft.a -o $(NAME)
 	@clear
 	@echo "\033[0;31m run ./typing"
 
 clean :
-	@make clean -C ./libFT
+	@make clean -C ./lib
 	@-rm -rf *.o ./get_next_line/*.o
 fclean : clean
-	@make fclean -C ./libFT
+	@make fclean -C ./lib
 	@-rm -rf $(NAME)
 
 re : fclean all

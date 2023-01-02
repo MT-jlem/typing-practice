@@ -5,21 +5,21 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC =	typing.c \
-		get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+		get-next-line/get_next_line.c get-next-line/get_next_line_utils.c
 
 OBJ = $(SRC:%.c=%.o)
 
 all : $(NAME)
 	
 $(NAME) : $(OBJ)
-	make -C ./libft
-	$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o $(NAME)
+	make -C ./libFT
+	$(CC) $(CFLAGS) $(OBJ) libFT/libft.a -o $(NAME)
 
 clean :
-	@make clean -C ./libft
+	@make clean -C ./libFT
 	@-rm -rf *.o ./get_next_line/*.o
 fclean : clean
-	@make fclean -C ./libft
+	@make fclean -C ./libFT
 	@-rm -rf $(NAME)
 
 re : fclean all

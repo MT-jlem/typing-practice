@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "./get_next_line/get_next_line.h"
-#include "./libft/libft.h"
+#include "./get-next-line/get_next_line.h"
+#include "./libFT/libft.h"
 #include <fcntl.h>
 
 typedef long long t_time;

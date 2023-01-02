@@ -100,11 +100,16 @@ int main(){
     while (i < wordCount)
     {
         r = rand() % 10000;
-        printf("%s\n",text[r]); fflush(stdin);
-        scanf("%s", str);
+        printf("-------------------------\n");
+        printf("%s\n",text[r]); 
+        if (scanf("%s", str) == EOF)
+        {
+            score = wordCount - score; 
+            break;
+        }
+       fflush(stdin);
         if (ft_strcmp(text[r], str))
             score--;
-        printf("-------------------------\n");
         i++;
     }
     printf("your score : %d/%d\n", wordCount , score);

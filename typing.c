@@ -77,7 +77,7 @@ int main(){
     char **text;
     int wordCount;
    text = init_text();
-    printf("You will be asked to enter a group of words one by one.Type it as fast as you can and hit Enter.\n");
+    printf("You will be asked to enter a group of words one by one. Type it as fast as you can and hit Enter.\n");
     printf("enter number between 1 and 10000\n");
     scanf("%d", &wordCount);
     if (wordCount < 0 || wordCount > 10000)

@@ -7,6 +7,7 @@
 #include "./get-next-line/get_next_line.h"
 #include "./lib/libft.h"
 #include <fcntl.h>
+#include <time.h>
 
 typedef long long t_time;
 
@@ -71,6 +72,13 @@ char    **init_text(){
 //take input 
 // display time
 // some other 
+
+void	print_time(t_time start, int words){
+	double timeInSec = (double)start / 60.0;
+	printf("%lld min %lld sec\n", start / 60 , start % 60);
+	printf("your speed: %.2f word per min\n",words / timeInSec);
+}
+
 int main(){
     
     
@@ -97,6 +105,7 @@ int main(){
     int score = wordCount;
     char str[30];
     srand(time(NULL));
+    t_time start = time(NULL);
     while (i < wordCount)
     {
         r = rand() % 10000;
@@ -112,5 +121,6 @@ int main(){
             score--;
         i++;
     }
+    print_time(time(NULL) - start, i+1);
     printf("your score : %d/%d\n", wordCount , score);
 }
